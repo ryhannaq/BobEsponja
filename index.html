@@ -1,20 +1,62 @@
-/* ===== MENU ===== */
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bob Esponja Calça Quadrada</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+    color:#1f2937;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(
+        rgba(0,180,255,.15),
+        rgba(0,120,255,.35)
+    ),
+    linear-gradient(
+        to bottom,
+        #87CEEB,
+        #4FC3F7,
+        #0288D1
+    );
+}
+
+/* MENU */
 
 nav{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-    background:rgba(7,89,133,.9);
-    backdrop-filter:blur(10px);
+    background:rgba(7,89,133,.95);
+    backdrop-filter:blur(8px);
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
 nav ul{
     display:flex;
     justify-content:center;
-    list-style:none;
     gap:25px;
+    list-style:none;
     padding:15px;
+    flex-wrap:wrap;
 }
 
 nav a{
@@ -28,37 +70,201 @@ nav a:hover{
     color:#FFD600;
 }
 
-/* ===== HERO ===== */
+/* BOLHAS */
 
-.hero{
-    padding-top:90px;
+.bubbles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
 }
 
-/* ===== EFEITOS ===== */
+.bubble{
+    position:absolute;
+    bottom:-120px;
+    border-radius:50%;
+    background:rgba(255,255,255,.25);
+    animation:subir linear infinite;
+}
+
+.bubble:nth-child(1){
+    width:40px;
+    height:40px;
+    left:10%;
+    animation-duration:12s;
+}
+
+.bubble:nth-child(2){
+    width:25px;
+    height:25px;
+    left:20%;
+    animation-duration:9s;
+    animation-delay:2s;
+}
+
+.bubble:nth-child(3){
+    width:60px;
+    height:60px;
+    left:35%;
+    animation-duration:15s;
+}
+
+.bubble:nth-child(4){
+    width:30px;
+    height:30px;
+    left:50%;
+    animation-duration:10s;
+    animation-delay:3s;
+}
+
+.bubble:nth-child(5){
+    width:70px;
+    height:70px;
+    left:65%;
+    animation-duration:18s;
+}
+
+.bubble:nth-child(6){
+    width:20px;
+    height:20px;
+    left:75%;
+    animation-duration:8s;
+}
+
+.bubble:nth-child(7){
+    width:50px;
+    height:50px;
+    left:85%;
+    animation-duration:14s;
+}
+
+.bubble:nth-child(8){
+    width:35px;
+    height:35px;
+    left:95%;
+    animation-duration:11s;
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.6;
+    }
+
+    90%{
+        opacity:.6;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.4);
+        opacity:0;
+    }
+
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 40px 40px;
+    position:relative;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.15)
+    ),
+    linear-gradient(
+        #4fc3f7,
+        #0288d1
+    );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.5) 0 10px, transparent 11px),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.5) 0 8px, transparent 9px),
+    radial-gradient(circle at 30% 80%, rgba(255,255,255,.5) 0 15px, transparent 16px),
+    radial-gradient(circle at 60% 60%, rgba(255,255,255,.4) 0 20px, transparent 21px),
+    radial-gradient(circle at 10% 70%, rgba(255,255,255,.4) 0 12px, transparent 13px),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,.4) 0 16px, transparent 17px);
+
+    opacity:.6;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero img{
+    width:320px;
+    max-width:90%;
+    animation:flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+.hero h1{
+    margin-top:20px;
+    font-size:4rem;
+    color:#FFD600;
+
+    text-shadow:
+    3px 3px #000,
+    6px 6px rgba(0,0,0,.25);
+}
+
+.hero p{
+    color:white;
+    font-size:1.3rem;
+    margin-top:15px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
 
 .card{
+    background:white;
+    border-radius:30px;
+    padding:35px;
+    margin-bottom:35px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+    transform .3s,
+    box-shadow .3s;
+
+    animation:aparecer .8s ease;
 }
 
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(0,0,0,.2);
-}
-
-.personagem{
-    transition:.3s;
-}
-
-.personagem:hover{
-    transform:scale(1.05);
-}
-
-/* ===== ANIMAÇÃO DE ENTRADA ===== */
-
-.card{
-    animation:aparecer .8s ease;
 }
 
 @keyframes aparecer{
@@ -75,21 +281,286 @@ nav a:hover{
 
 }
 
-/* ===== MAIS BOLHAS ===== */
-
-.hero::before{
-
-    background-image:
-
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.5) 0 10px, transparent 11px),
-
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,.5) 0 8px, transparent 9px),
-
-    radial-gradient(circle at 30% 80%, rgba(255,255,255,.5) 0 15px, transparent 16px),
-
-    radial-gradient(circle at 60% 60%, rgba(255,255,255,.4) 0 20px, transparent 21px),
-
-    radial-gradient(circle at 10% 70%, rgba(255,255,255,.4) 0 12px, transparent 13px),
-
-    radial-gradient(circle at 90% 80%, rgba(255,255,255,.4) 0 16px, transparent 17px);
+.card h2{
+    color:#f59e0b;
+    margin-bottom:15px;
 }
+
+.card p{
+    line-height:1.8;
+    text-align:justify;
+    margin-bottom:15px;
+}
+
+.bio{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:30px;
+    align-items:center;
+}
+
+.bio img{
+    width:100%;
+    border-radius:25px;
+}
+
+    /* GALERIA */
+
+.personagens{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.personagem{
+    background:#fffef2;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.personagem:hover{
+    transform:scale(1.05);
+}
+
+.personagem img{
+    width:220px;
+    max-width:100%;
+}
+
+.personagem h3{
+    color:#0c4a6e;
+    margin-top:15px;
+}
+
+/* LICENÇA */
+
+.licenca{
+    text-align:center;
+}
+
+.licenca img{
+    width:500px;
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* LINKS */
+
+.links{
+    display:grid;
+    gap:15px;
+}
+
+.link-card{
+    background:#fff7cc;
+    padding:18px;
+    border-left:8px solid #FFD600;
+    border-radius:15px;
+}
+
+.link-card a{
+    color:#0369a1;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.link-card a:hover{
+    color:#ea580c;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#075985;
+    color:white;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .bio{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bubbles">
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+    <span class="bubble"></span>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#bio">Biografia</a></li>
+        <li><a href="#vida">Vida</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#licenca">Licença</a></li>
+    </ul>
+</nav>
+
+<header class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <img src="images/image2.png" alt="Bob Esponja">
+
+        <h1>BOB ESPONJA CALÇA QUADRADA</h1>
+
+        <p>O cozinheiro mais famoso da Fenda do Biquíni</p>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+<section class="card bio" id="bio">
+
+    <img src="images/image2.png" alt="Bob Esponja">
+
+    <div>
+
+        <h2>Quem é Bob Esponja?</h2>
+
+        <p>
+            Bob Esponja Calça Quadrada é o protagonista da famosa série animada criada por Stephen Hillenburg.
+        </p>
+
+        <p>
+            Alegre, otimista e muito dedicado ao trabalho, ele conquistou fãs em todo o mundo com suas aventuras submarinas.
+        </p>
+
+        <p>
+            Sua personalidade divertida e inocente faz dele um dos personagens mais conhecidos da televisão.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="card" id="vida">
+
+    <h2>Vida na Fenda do Biquíni</h2>
+
+    <p>
+        Bob Esponja vive em um abacaxi no fundo do mar ao lado de seu fiel caracol Gary.
+    </p>
+
+    <p>
+        Seu melhor amigo é Patrick Estrela, e juntos eles vivem aventuras engraçadas e inesperadas.
+    </p>
+
+    <p>
+        Ele trabalha como cozinheiro no Siri Cascudo e sonha em conseguir sua licença de barco.
+    </p>
+
+</section>
+
+<section class="card" id="galeria">
+
+    <h2>Galeria</h2>
+
+    <div class="personagens">
+
+        <div class="personagem">
+            <img src="images/image3.png" alt="Bob Esponja">
+            <h3>Bob Esponja</h3>
+        </div>
+
+        <div class="personagem">
+            <img src="images/image4.png" alt="Versão Clássica">
+            <h3>Versão Clássica</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="card licenca" id="licenca">
+
+    <h2>Licença de Barco</h2>
+
+    <img src="images/image1.png" alt="Licença de Barco">
+
+    <p style="margin-top:20px">
+        Apesar de inúmeras tentativas, Bob Esponja continua tendo dificuldades para passar no exame da Sra. Puff.
+    </p>
+
+</section>
+
+<section class="card">
+
+    <h2>Links Oficiais</h2>
+
+    <div class="links">
+
+        <div class="link-card">
+            🧽
+            <a href="https://spongebob.fandom.com/wiki/Kamp_Koral:_SpongeBob%27s_Under_Years"
+               target="_blank"
+               rel="noopener noreferrer">
+                Kamp Koral
+            </a>
+        </div>
+
+        <div class="link-card">
+            🌊
+            <a href="https://spongebob.fandom.com/wiki/Stephen_Hillenburg"
+               target="_blank"
+               rel="noopener noreferrer">
+                Stephen Hillenburg
+            </a>
+        </div>
+
+        <div class="link-card">
+            📚
+            <a href="https://spongebob.fandom.com/wiki/The_Intertidal_Zone"
+               target="_blank"
+               rel="noopener noreferrer">
+                A Zona Intertidal
+            </a>
+        </div>
+
+        <div class="link-card">
+            ⭐
+            <a href="https://spongebob.fandom.com/wiki/Help_Wanted"
+               target="_blank"
+               rel="noopener noreferrer">
+                Procura-se Ajudante
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    🧽 Bob Esponja Calça Quadrada • Fenda do Biquíni
+</footer>
+
+</body>
+</html>
