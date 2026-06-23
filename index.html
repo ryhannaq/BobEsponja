@@ -504,13 +504,40 @@ footer{
     </div>
 
 </section>
+    
 
 <section class="card" id="vida">
 
-    <div>
+    <style>
+        
+    @media(max-width:900px){
 
-            <img src="image/image5.png" alt="Bob Esponja">
-    
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .bio{
+        grid-template-columns:1fr;
+    }
+
+}
+
+.vida-img{
+    width:300px;
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto 20px;
+    border-radius:20px;
+}
+
+</style>
+
+
+<div>
+        
+    <img class="vida-img" src="image/image5.png" alt="Bob Esponja">
+        
     <h2>Vida na Fenda do Biquíni</h2>
 
     <p>
@@ -524,7 +551,9 @@ footer{
     <p>
         Ele trabalha como cozinheiro no Siri Cascudo e sonha em conseguir sua licença de barco.
     </p>
-
+        
+</div>
+        
 </section>
 
 <section class="card" id="galeria">
