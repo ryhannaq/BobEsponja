@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 
 *{
     margin:0;
@@ -45,8 +49,10 @@ nav{
     top:0;
     width:100%;
     z-index:1000;
+
     background:rgba(7,89,133,.95);
     backdrop-filter:blur(8px);
+
     box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
@@ -54,6 +60,7 @@ nav ul{
     display:flex;
     justify-content:center;
     gap:25px;
+
     list-style:none;
     padding:15px;
     flex-wrap:wrap;
@@ -83,8 +90,10 @@ nav a:hover{
 .bubble{
     position:absolute;
     bottom:-120px;
+
     border-radius:50%;
     background:rgba(255,255,255,.25);
+
     animation:subir linear infinite;
 }
 
@@ -172,11 +181,15 @@ nav a:hover{
 
 .hero{
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     padding:100px 40px 40px;
+
     position:relative;
 
     background:
@@ -191,16 +204,24 @@ nav a:hover{
 }
 
 .hero::before{
+
     content:"";
+
     position:absolute;
     inset:0;
 
     background-image:
+
     radial-gradient(circle at 20% 20%, rgba(255,255,255,.5) 0 10px, transparent 11px),
+
     radial-gradient(circle at 80% 30%, rgba(255,255,255,.5) 0 8px, transparent 9px),
+
     radial-gradient(circle at 30% 80%, rgba(255,255,255,.5) 0 15px, transparent 16px),
+
     radial-gradient(circle at 60% 60%, rgba(255,255,255,.4) 0 20px, transparent 21px),
+
     radial-gradient(circle at 10% 70%, rgba(255,255,255,.4) 0 12px, transparent 13px),
+
     radial-gradient(circle at 90% 80%, rgba(255,255,255,.4) 0 16px, transparent 17px);
 
     opacity:.6;
@@ -214,6 +235,7 @@ nav a:hover{
 .hero img{
     width:320px;
     max-width:90%;
+
     animation:flutuar 4s ease-in-out infinite;
 }
 
@@ -226,7 +248,9 @@ nav a:hover{
 }
 
 .hero h1{
+
     margin-top:20px;
+
     font-size:4rem;
     color:#FFD600;
 
@@ -248,8 +272,11 @@ nav a:hover{
 }
 
 .card{
+
     background:white;
+
     border-radius:30px;
+
     padding:35px;
     margin-bottom:35px;
 
@@ -303,7 +330,6 @@ nav a:hover{
     width:100%;
     border-radius:25px;
 }
-
     /* GALERIA */
 
 .personagens{
@@ -424,7 +450,8 @@ footer{
 
     <div class="hero-content">
 
-        <img src="images/image2.png" alt="Bob Esponja">
+        <!-- CAMINHO CORRIGIDO -->
+        <img src="image/image2.png" alt="Bob Esponja">
 
         <h1>BOB ESPONJA CALÇA QUADRADA</h1>
 
@@ -438,40 +465,41 @@ footer{
 
 <section class="card bio" id="bio">
 
-    <img src="images/image2.png" alt="Bob Esponja">
+    <!-- CAMINHO CORRIGIDO -->
+    <img src="image/image2.png" alt="Bob Esponja sorrindo">
 
     <div>
 
         <h2>Quem é Bob Esponja?</h2>
 
-       <p>
-    <strong>Bob Esponja Calça Quadrada</strong>
-    é o principal protagonista da série animada
-    de mesmo nome e de
-    <a href="https://spongebob.fandom.com/wiki/Kamp_Koral:_SpongeBob%27s_Under_Years"
-       target="_blank"
-       rel="noopener noreferrer">
-       Kamp Koral: Os Anos de Infância do Bob Esponja
-    </a>.
-</p>
+        <p>
+            <strong>Bob Esponja Calça Quadrada</strong>
+            é o principal protagonista da série animada
+            de mesmo nome e de
+            <a href="https://spongebob.fandom.com/wiki/Kamp_Koral:_SpongeBob%27s_Under_Years"
+               target="_blank"
+               rel="noopener noreferrer">
+               Kamp Koral: Os Anos de Infância do Bob Esponja
+            </a>.
+        </p>
 
-<p>
-    Ele foi criado pelo ex-biólogo marinho
-    <a href="https://spongebob.fandom.com/wiki/Stephen_Hillenburg"
-       target="_blank"
-       rel="noopener noreferrer">
-       Stephen Hillenburg
-    </a>.
-</p>
+        <p>
+            Ele foi criado pelo ex-biólogo marinho
+            <a href="https://spongebob.fandom.com/wiki/Stephen_Hillenburg"
+               target="_blank"
+               rel="noopener noreferrer">
+               Stephen Hillenburg
+            </a>.
+        </p>
 
-<p>
-    A inspiração veio do personagem criado para o livro
-    <a href="https://spongebob.fandom.com/wiki/The_Intertidal_Zone"
-       target="_blank"
-       rel="noopener noreferrer">
-       A Zona Intertidal
-    </a>.
-</p>
+        <p>
+            A inspiração veio do personagem criado para o livro
+            <a href="https://spongebob.fandom.com/wiki/The_Intertidal_Zone"
+               target="_blank"
+               rel="noopener noreferrer">
+               A Zona Intertidal
+            </a>.
+        </p>
 
     </div>
 
@@ -486,7 +514,7 @@ footer{
     </p>
 
     <p>
-        Seu melhor amigo é Patrick Estrela, e juntos eles vivem aventuras engraçadas e inesperadas.
+        Seu melhor amigo é Patrick Estrela e juntos vivem aventuras engraçadas.
     </p>
 
     <p>
@@ -502,13 +530,21 @@ footer{
     <div class="personagens">
 
         <div class="personagem">
-            <img src="images/image3.png" alt="Bob Esponja">
+
+            <!-- CAMINHO CORRIGIDO -->
+            <img src="image/image3.png" alt="Bob Esponja">
+
             <h3>Bob Esponja</h3>
+
         </div>
 
         <div class="personagem">
-            <img src="images/image4.png" alt="Versão Clássica">
+
+            <!-- CAMINHO CORRIGIDO -->
+            <img src="image/image4.png" alt="Versão clássica">
+
             <h3>Versão Clássica</h3>
+
         </div>
 
     </div>
@@ -519,7 +555,8 @@ footer{
 
     <h2>Licença de Barco</h2>
 
-    <img src="images/image1.png" alt="Licença de Barco">
+    <!-- CAMINHO CORRIGIDO -->
+    <img src="image/image1.png" alt="Licença de Barco">
 
     <p style="margin-top:20px">
         Apesar de inúmeras tentativas, Bob Esponja continua tendo dificuldades para passar no exame da Sra. Puff.
@@ -581,8 +618,3 @@ footer{
 
 </body>
 </html>
-
-<img src="image/image1.png" alt="">
-<img src="image/image2.png" alt="">
-<img src="image/image3.png" alt="">
-<img src="image/image4.png" alt="">
